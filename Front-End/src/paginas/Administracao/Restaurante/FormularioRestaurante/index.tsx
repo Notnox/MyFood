@@ -1,4 +1,4 @@
-import { Box, Button, TextField, Typography } from "@mui/material";
+import { Box, Button, Paper, TextField, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import http from "../../../../http";
@@ -41,16 +41,13 @@ const FormularioRestaurante = () => {
                 console.log('Erro: ' + error);
             })
         }
-
-
-
     }
     return (
-        <Box sx={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+        <>
             <Typography component="h1" variant="h6">
                 Formulário de Restaurantes
             </Typography>
-            <Box component="form" onSubmit={aoSubmeterForm}>
+            <Box component="form" onSubmit={aoSubmeterForm} sx={{width: '100%'}}>
                 <TextField 
                     label="Nome do restaurante" 
                     variant="standard" 
@@ -58,17 +55,17 @@ const FormularioRestaurante = () => {
                     onChange={evento => setNomeRestaurante(evento.target.value)}
                     fullWidth
                     required
-                />
+                    />
                 <Button 
                     sx={{marginTop: '1'}}
                     variant="outlined"
                     type="submit"
                     fullWidth
-                >
+                    >
                     Salvar
                 </Button>
             </Box>
-        </Box>
+        </>
     )
 }
 
