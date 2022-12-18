@@ -21,6 +21,16 @@ const PaginaPadrao = () => {
                                     Novo restaurante
                                 </Button>
                             </Link>
+                            <Link component={RouterLink} to='/admin/pratos'>
+                                <Button sx={{mv: 2, color: 'white'}}>
+                                    Pratos
+                                </Button>
+                            </Link>
+                            <Link component={RouterLink} to='/admin/pratos/novo'>
+                                <Button sx={{mv: 2, color: 'white'}}>
+                                    Novo prato
+                                </Button>
+                            </Link>
                         </Box>
                     </Toolbar>
                 </Container>
